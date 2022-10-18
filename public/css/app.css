@@ -18618,7 +18618,9 @@ body {
 .card-wrapper {
   position: relative;
   display: flex;
+  padding: 10px;
   flex-direction: column;
+  height: 100%;
 }
 .card-wrapper .card-header {
   overflow: hidden;
@@ -18701,4 +18703,23 @@ form .form-control {
     max-width: unset;
     width: 100%;
   }
+}
+.slick-track {
+  display: flex;
+}
+.slick-track .slick-slide {
+  height: inherit;
+}
+
+.slick-dots li {
+  margin: 0 2px;
+}
+.slick-dots li button:hover:before {
+  color: #bb3450;
+}
+.slick-dots li button:before {
+  font-size: 15px;
+}
+.slick-dots li.slick-active button:before {
+  color: #bb3450;
 }

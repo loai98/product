@@ -28,7 +28,9 @@ body {
 .card-wrapper {
     position: relative;
     display: flex;
+    padding: 10px;
     flex-direction: column;
+    height: 100%;
 
     .card-header {
         overflow: hidden;
@@ -136,4 +138,39 @@ form {
         }
     }
 
+}
+
+.slick-track {
+    display: flex;
+    .slick-slide {
+        height: inherit;
+    }
+}
+
+.slick-dots {
+    li {
+        margin: 0 2px;
+
+        button {
+            &:hover {
+                &:before {
+                    color: $primary-color;
+                }
+
+            }
+
+            &:before {
+                font-size: 15px;
+
+            }
+        }
+    }
+
+    li.slick-active {
+        button {
+            &:before {
+                color: $primary-color;
+            }
+        }
+    }
 }

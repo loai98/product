@@ -5367,7 +5367,9 @@ $(document).on('submit', ".ajax-form", function (event) {
     },
     success: function success(result) {
       $('#modal').modal("hide");
+      destroyCarousel();
       $('#page_content').html(result);
+      slickCarousel();
     },
     complete: function complete() {
       $('#loader').hide();
@@ -5386,19 +5388,29 @@ $(document).on('click', '#deleteItem', function () {
       $('#loader').show();
     },
     success: function success(result) {
+      destroyCarousel();
       $('#page_content').html(result);
+      slickCarousel();
     },
     complete: function complete() {
       $('#loader').hide();
     }
   });
 });
-$('.product-content').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000
-});
+slickCarousel();
+function slickCarousel() {
+  $('.product-content').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: true,
+    autoplay: false,
+    autoplaySpeed: 10000,
+    arrows: false
+  });
+}
+function destroyCarousel() {
+  $('.product-content').slick('destroy');
+}
 
 /***/ }),
 
